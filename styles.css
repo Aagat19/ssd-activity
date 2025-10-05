@@ -1,0 +1,678 @@
+/* ========== Reset and Base Styles ========== */
+
+* {
+    margin: 0; /* Remove default margin from all elements */
+    padding: 0; /* Remove default padding from all elements */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Set primary font for the entire page */
+    line-height: 1.6; /* Set line height for better readability */
+    color: #333; /* Set default text color to dark gray */
+    background-color: #f8f9fa; /* Set light gray background for the page */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* ========== Container ========== */
+
+.container {
+    max-width: 1200px; /* Set maximum width for content container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 2rem; /* Add horizontal padding for spacing */
+}
+
+/* ========== Navigation Bar ========== */
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient background */
+    padding: 1rem 0; /* Add vertical padding to navbar */
+    position: sticky; /* Make navbar stick to top when scrolling */
+    top: 0; /* Position at top of viewport */
+    z-index: 1000; /* Ensure navbar stays above other content */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Add subtle shadow below navbar */
+}
+
+.navbar .container {
+    display: flex; /* Use flexbox for navbar layout */
+    justify-content: space-between; /* Space items evenly with space between */
+    align-items: center; /* Vertically center items */
+}
+
+.nav-brand {
+    font-size: 1.5rem; /* Set larger font size for brand name */
+    font-weight: 700; /* Make brand name bold */
+    color: white; /* White text color */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+}
+
+.nav-menu {
+    display: flex; /* Use flexbox for menu items */
+    list-style: none; /* Remove default list bullets */
+    gap: 2rem; /* Add space between menu items */
+}
+
+.nav-menu li a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Medium font weight */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 0.95rem; /* Slightly smaller font size */
+}
+
+.nav-menu li a:hover {
+    opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+}
+
+.nav-toggle {
+    display: none; /* Hide hamburger menu by default (shown on mobile) */
+    flex-direction: column; /* Stack hamburger lines vertically */
+    background: none; /* Remove button background */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Show pointer cursor on hover */
+    gap: 4px; /* Space between hamburger lines */
+}
+
+.nav-toggle span {
+    width: 25px; /* Set width of hamburger lines */
+    height: 3px; /* Set height of hamburger lines */
+    background: white; /* White color for lines */
+    transition: 0.3s; /* Smooth transition for animation */
+}
+
+/* ========== Hero Section ========== */
+
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient background */
+    color: white; /* White text color */
+    padding: 6rem 2rem; /* Large vertical padding, horizontal padding */
+    text-align: center; /* Center align text */
+    position: relative; /* Enable absolute positioning for child elements */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.hero::before {
+    content: ''; /* Required for pseudo-element to display */
+    position: absolute; /* Position absolutely within hero */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+    bottom: 0; /* Align to bottom */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23ffffff"></path></svg>') no-repeat; /* Add decorative wave pattern */
+    background-size: cover; /* Cover entire area */
+    opacity: 0.1; /* Make pattern subtle */
+}
+
+.hero-content {
+    position: relative; /* Position relative to stack above background */
+    z-index: 1; /* Ensure content appears above background pattern */
+}
+
+.hero-title {
+    font-size: 3rem; /* Large font size for main title */
+    font-weight: 700; /* Bold font weight */
+    margin-bottom: 1rem; /* Space below title */
+    animation: fadeInUp 0.8s ease; /* Apply fade-in animation */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; /* Medium font size for subtitle */
+    margin-bottom: 0.5rem; /* Small space below subtitle */
+    font-weight: 600; /* Semi-bold font weight */
+    animation: fadeInUp 0.8s ease 0.2s both; /* Fade-in with delay */
+}
+
+.hero-institute {
+    font-size: 1.1rem; /* Slightly larger than body text */
+    opacity: 0.9; /* Slightly transparent */
+    margin-bottom: 1.5rem; /* Space below institute name */
+    animation: fadeInUp 0.8s ease 0.4s both; /* Fade-in with longer delay */
+}
+
+.hero-time {
+    font-size: 1rem; /* Normal font size */
+    opacity: 0.8; /* More transparent */
+    font-weight: 300; /* Light font weight */
+    animation: fadeInUp 0.8s ease 0.6s both; /* Fade-in with longest delay */
+}
+
+/* ========== Sections ========== */
+
+.section {
+    padding: 5rem 0; /* Large vertical padding for sections */
+    background: white; /* White background */
+}
+
+.section-alt {
+    background: #f8f9fa; /* Alternate light gray background */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Large font size for section titles */
+    font-weight: 700; /* Bold font weight */
+    text-align: center; /* Center align title */
+    margin-bottom: 3rem; /* Large space below title */
+    color: #667eea; /* Purple color matching theme */
+    position: relative; /* Enable positioning for pseudo-element */
+}
+
+.section-title::after {
+    content: ''; /* Required for pseudo-element */
+    display: block; /* Make it a block element */
+    width: 80px; /* Set width of underline */
+    height: 4px; /* Set height of underline */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient underline */
+    margin: 1rem auto 0; /* Center and add space above */
+    border-radius: 2px; /* Slightly round the corners */
+}
+
+/* ========== Cards ========== */
+
+.card {
+    background: white; /* White background */
+    padding: 2rem; /* Padding inside card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07); /* Subtle shadow */
+    margin-bottom: 2rem; /* Space below card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Deeper shadow on hover */
+}
+
+.card p {
+    margin-bottom: 1rem; /* Space between paragraphs */
+    color: #555; /* Medium gray text color */
+}
+
+/* ========== Info Grid ========== */
+
+.info-grid {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between grid items */
+    margin-top: 2rem; /* Space above grid */
+}
+
+.info-card {
+    background: white; /* White background */
+    padding: 2rem; /* Padding inside card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07); /* Subtle shadow */
+    text-align: center; /* Center align content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.info-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Deeper shadow on hover */
+}
+
+.info-icon {
+    font-size: 3rem; /* Large font size for emoji icon */
+    margin-bottom: 1rem; /* Space below icon */
+}
+
+.info-card h3 {
+    color: #667eea; /* Purple color for heading */
+    margin-bottom: 1rem; /* Space below heading */
+    font-size: 1.3rem; /* Slightly larger font */
+}
+
+.info-card p {
+    margin-bottom: 0.5rem; /* Space between paragraphs */
+    color: #666; /* Medium gray text */
+}
+
+.info-card strong {
+    color: #333; /* Darker color for emphasized text */
+}
+
+/* ========== Policy Grid ========== */
+
+.policy-grid {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between grid items */
+    margin-bottom: 2rem; /* Space below grid */
+}
+
+.policy-card {
+    background: white; /* White background */
+    padding: 2rem; /* Padding inside card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07); /* Subtle shadow */
+    border-left: 4px solid #667eea; /* Purple accent border on left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.policy-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Deeper shadow on hover */
+}
+
+.policy-card h3 {
+    color: #667eea; /* Purple color for heading */
+    margin-bottom: 1rem; /* Space below heading */
+    font-size: 1.2rem; /* Slightly larger font */
+}
+
+.policy-card p {
+    color: #666; /* Medium gray text */
+    line-height: 1.6; /* Better line spacing */
+}
+
+/* ========== Grade Table ========== */
+
+.grade-table {
+    width: 100%; /* Full width of container */
+    border-collapse: collapse; /* Merge borders */
+    margin-top: 1rem; /* Space above table */
+}
+
+.grade-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient background */
+    color: white; /* White text */
+}
+
+.grade-table th,
+.grade-table td {
+    padding: 1rem; /* Padding inside cells */
+    text-align: left; /* Left align text */
+    border-bottom: 1px solid #e0e0e0; /* Light gray bottom border */
+}
+
+.grade-table tbody tr:hover {
+    background: #f8f9fa; /* Light gray background on hover */
+}
+
+/* ========== Schedule Container ========== */
+
+.schedule-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 1.5rem; /* Space between items */
+}
+
+.schedule-item {
+    background: white; /* White background */
+    padding: 1.5rem; /* Padding inside item */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Very subtle shadow */
+    display: flex; /* Use flexbox for layout */
+    gap: 1.5rem; /* Space between elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    border-left: 4px solid #667eea; /* Purple accent border */
+}
+
+.schedule-item:hover {
+    transform: translateX(5px); /* Slide right on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Deeper shadow on hover */
+}
+
+.schedule-item.completed {
+    opacity: 0.7; /* Make completed items slightly transparent */
+}
+
+.schedule-item.cancelled {
+    opacity: 0.5; /* Make cancelled items more transparent */
+    border-left-color: #ccc; /* Gray border for cancelled */
+}
+
+.schedule-item.upcoming {
+    border-left-color: #48bb78; /* Green border for upcoming */
+}
+
+.schedule-number {
+    flex-shrink: 0; /* Prevent number from shrinking */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
+    color: white; /* White text */
+    border-radius: 50%; /* Make it circular */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    font-weight: 700; /* Bold font */
+    font-size: 1.2rem; /* Larger font size */
+}
+
+.schedule-content {
+    flex: 1; /* Take remaining space */
+}
+
+.schedule-content h4 {
+    color: #333; /* Dark gray heading */
+    margin-bottom: 0.5rem; /* Space below heading */
+    font-size: 1.1rem; /* Slightly larger font */
+}
+
+.schedule-date {
+    color: #666; /* Medium gray text */
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.5rem; /* Space below date */
+}
+
+.schedule-links {
+    display: flex; /* Use flexbox for layout */
+    gap: 1rem; /* Space between links */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.schedule-links a {
+    color: #667eea; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem; /* Slightly smaller font */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.schedule-links a:hover {
+    color: #764ba2; /* Darker purple on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* ========== Lab Grid ========== */
+
+.lab-grid {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between grid items */
+}
+
+.lab-card {
+    background: white; /* White background */
+    padding: 2rem; /* Padding inside card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    border-top: 4px solid #667eea; /* Purple accent border on top */
+}
+
+.lab-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Deeper shadow on hover */
+}
+
+.lab-card.completed {
+    opacity: 0.8; /* Make completed labs slightly transparent */
+}
+
+.lab-number {
+    display: inline-block; /* Display as inline block */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Purple gradient */
+    color: white; /* White text */
+    padding: 0.5rem 1rem; /* Padding inside badge */
+    border-radius: 20px; /* Rounded corners */
+    font-weight: 700; /* Bold font */
+    margin-bottom: 1rem; /* Space below badge */
+    font-size: 0.9rem; /* Slightly smaller font */
+}
+
+.lab-card h4 {
+    color: #333; /* Dark gray heading */
+    margin-bottom: 0.5rem; /* Space below heading */
+    font-size: 1.2rem; /* Larger font size */
+}
+
+.lab-date {
+    color: #666; /* Medium gray text */
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 1rem; /* Space below date */
+}
+
+.lab-links {
+    display: flex; /* Use flexbox for layout */
+    gap: 1rem; /* Space between links */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.lab-links a {
+    color: #667eea; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 0.9rem; /* Slightly smaller font */
+    padding: 0.5rem 1rem; /* Padding inside link */
+    border: 2px solid #667eea; /* Purple border */
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.lab-links a:hover {
+    background: #667eea; /* Purple background on hover */
+    color: white; /* White text on hover */
+}
+
+/* ========== Exam Container ========== */
+
+.exam-container {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between grid items */
+}
+
+.exam-card {
+    background: white; /* White background */
+    padding: 2rem; /* Padding inside card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    position: relative; /* Enable absolute positioning for child elements */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.exam-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12); /* Deeper shadow on hover */
+}
+
+.exam-card.completed {
+    opacity: 0.8; /* Make completed exams slightly transparent */
+}
+
+.exam-type {
+    display: inline-block; /* Display as inline block */
+    background: #667eea; /* Purple background */
+    color: white; /* White text */
+    padding: 0.4rem 1rem; /* Padding inside badge */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 0.85rem; /* Smaller font size */
+    font-weight: 600; /* Semi-bold font */
+    margin-bottom: 1rem; /* Space below badge */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px; /* Space between letters */
+}
+
+.exam-type.quiz {
+    background: #48bb78; /* Green background for quizzes */
+}
+
+.exam-type.mid {
+    background: #ed8936; /* Orange background for mid exam */
+}
+
+.exam-card h4 {
+    color: #333; /* Dark gray heading */
+    margin-bottom: 1rem; /* Space below heading */
+    font-size: 1.2rem; /* Larger font size */
+}
+
+.exam-card p {
+    color: #666; /* Medium gray text */
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.5rem; /* Space between paragraphs */
+}
+
+.exam-link {
+    display: inline-block; /* Display as inline block */
+    margin-top: 1rem; /* Space above link */
+    color: #667eea; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Semi-bold font */
+    padding: 0.6rem 1.2rem; /* Padding inside link */
+    border: 2px solid #667eea; /* Purple border */
+    border-radius: 6px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.exam-link:hover {
+    background: #667eea; /* Purple background on hover */
+    color: white; /* White text on hover */
+}
+
+/* ========== Staff Section ========== */
+
+.staff-grid {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+    gap: 3rem; /* Space between grid items */
+}
+
+.staff-category h3 {
+    color: #667eea; /* Purple heading color */
+    margin-bottom: 1.5rem; /* Space below heading */
+    font-size: 1.5rem; /* Larger font size */
+    text-align: center; /* Center align heading */
+}
+
+.staff-list {
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 1rem; /* Space between items */
+}
+
+.staff-member {
+    background: white; /* White background */
+    padding: 1.5rem; /* Padding inside member card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Very subtle shadow */
+    text-align: center; /* Center align text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+.staff-member:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Deeper shadow on hover */
+}
+
+.staff-member a {
+    color: #667eea; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Semi-bold font */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.staff-member a:hover {
+    color: #764ba2; /* Darker purple on hover */
+}
+
+/* ========== Footer ========== */
+
+.footer {
+    background: #2d3748; /* Dark gray background */
+    color: white; /* White text */
+    padding: 3rem 0; /* Vertical padding */
+    text-align: center; /* Center align text */
+}
+
+.footer-links {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center links */
+    gap: 2rem; /* Space between links */
+    margin-bottom: 1.5rem; /* Space below links */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.footer-links a {
+    color: #a0aec0; /* Light gray link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-links a:hover {
+    color: white; /* White on hover */
+}
+
+.footer-text {
+    color: #a0aec0; /* Light gray text */
+    margin: 0.5rem 0; /* Vertical spacing */
+    font-size: 0.9rem; /* Slightly smaller font */
+}
+
+/* ========== Animations ========== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start transparent */
+        transform: translateY(30px); /* Start below final position */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at final position */
+    }
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide navigation menu on mobile */
+    }
+    
+    .nav-toggle {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+    
+    .hero-title {
+        font-size: 2rem; /* Smaller title on mobile */
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem; /* Smaller subtitle on mobile */
+    }
+    
+    .section-title {
+        font-size: 2rem; /* Smaller section title on mobile */
+    }
+    
+    .info-grid,
+    .policy-grid,
+    .lab-grid,
+    .exam-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .staff-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .container {
+        padding: 0 1rem; /* Less padding on mobile */
+    }
+    
+    .section {
+        padding: 3rem 0; /* Less padding on mobile */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .hero {
+        padding: 4rem 1rem; /* Less padding on small mobile */
+    }
+    
+    .hero-title {
+        font-size: 1.5rem; /* Even smaller title on small mobile */
+    }
+    
+    .schedule-item {
+        flex-direction: column; /* Stack schedule items vertically */
+    }
+    
+    .schedule-number {
+        width: 40px; /* Smaller number circle */
+        height: 40px; /* Smaller number circle */
+        font-size: 1rem; /* Smaller font */
+    }
+}
